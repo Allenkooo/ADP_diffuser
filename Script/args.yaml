@@ -1,0 +1,24 @@
+Data_path: /home/ko123chungg/git/ADP_repo/Data/ADMP/positive_negative.fasta
+Word2Vec_args:
+ model_path: /home/ko123chungg/git/ADP_repo/Script/outputs/Word2Vec_model/
+ emb_dim: 128
+ kmer: 9
+ window_size: 20
+ epochs: 10
+ sg: 1           # Skipgram:1, CBow: 0
+Unet_args:
+ dim: 64
+ dim_mults: [1, 2, 4]
+ channels: 128   # output dim
+Diffusion_args:
+ seq_length: 32        # L - kmer + 1
+ timesteps: 1000
+ sampling_timesteps: 999
+ pe: False             # positional encoding
+ objective: pred_x0
+results_folder: /home/ko123chungg/git/ADP_repo/Script/outputs/Diffusion_model/w2v_9mer_pred_x0_pad_100000/
+checkpoint: 3      # checkpoint diffusion model to load
+n_samples: 1000    # number of generated data
+labeling: KNN      # KNN, IC(Interal Classifer), TD(Two Diffusers)
+Select_method: Euclidean   # Euclidean distance, kmeans
+Augmentation_method: SMOTE    # Diffusion, SMOTE, NTA
