@@ -68,6 +68,7 @@
     n_samples: 1000    # number of generated data
     labeling: KNN      # KNN, IC(Interal Classifer), TD(Two Diffusers)
     Select_method: Euclidean   # Euclidean distance, kmeans
+    Augmentation_method: Diffusion # Diffusion, SMOTE, NTA
     ```
 - To run main file:
 
@@ -75,7 +76,7 @@
     ```linux=
     python main.py -c args.yaml -tw
     ```
-    - Train Word2Vec model
+    - Train Diffusion model
     ```linux=
     python main.py -c args.yaml -td
     ```
